@@ -1,7 +1,5 @@
 import dotenv
 import streamlit as st
-from openai import OpenAI
-from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_gigachat.chat_models import GigaChat
 
 api_key = dotenv.get_key('./keys.env','gigachat_key')
