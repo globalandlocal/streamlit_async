@@ -4,14 +4,11 @@ from openai import OpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_gigachat.chat_models import GigaChat
 
-api_key = dotenv.get_key('./keys.env','deepseek_key')
-
+api_key = dotenv.get_key('./keys.env','gigachat_key')
 # Установите ваш API-ключ OpenAI (или другой совместимый API)
-client = OpenAI(api_key="YzJjODRlZjgtODYzNy00OWEyLTk5MGMtNThhZTlkOTkwZTI3OjljZTkwMWYzLTU1YWQtNDI0YS1iNWMyLTA0NTI4MWIwNTRiNg==",
-                base_url="https://gigachat.devices.sberbank.ru/api/v1")
 giga = GigaChat(
     # Для авторизации запросов используйте ключ, полученный в проекте GigaChat API
-    credentials="YzJjODRlZjgtODYzNy00OWEyLTk5MGMtNThhZTlkOTkwZTI3OjljZTkwMWYzLTU1YWQtNDI0YS1iNWMyLTA0NTI4MWIwNTRiNg==",
+    credentials=api_key,
     verify_ssl_certs=False)
 st.title("💬 Чат с Gigachat")
 
